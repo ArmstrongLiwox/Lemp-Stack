@@ -94,11 +94,11 @@ sudo apt install nginx
 ```
 sudo systemctl status nginx
 ```
-![verify nginx](<images/verify nginx.png>)
 
-```
-sudo -H apt-get purge nginx-common nginx-full
-```
+![verify ngnix fail](<images/verify nginx fail.png>)
+
+
+![verify nginx](<images/verify nginx.png>)
 
 
 
@@ -139,5 +139,7 @@ curl -s http://35.179.92.176/latest/meta-data/public-ipv4
 ```
 
 ![check site](<images/check site.png>)
+
+![welcome to ngnix](<images/welcome ngnix.png>)
 
 
