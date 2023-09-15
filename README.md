@@ -262,6 +262,8 @@ sudo chown -R $USER:$USER /var/www/projectLEMP
 
 ```
 
+![make directory](<images/lemp mkdir.png>)
+
 > open a new configuration file in Nginx 'sites-availabe' directory using ***nano***
 
 ```
@@ -270,37 +272,21 @@ sudo nano /etc/nginx/sites-available/projectLEMP
 
 > paste in the following bar bone-configuration
 
-```
-#/etc/nginx/sites-available/projectLEMP
+![paste code](<images/lemp paste code.png>)
 
-server {
-    listen 80;
-    server_name projectLEMP www.projectLEMP;
-    root /var/www/projectLEMP;
+> these are what the blocks do
 
-    index index.html index.htm index.php;
+![Alt text](<images/lemp what blocks do.png>)
 
-    location / {
-        try_files $uri $uri/ =404;
-    }
 
-    location ~ \.php$ {
-        include snippets/fastcgi-php.conf;
-        fastcgi_pass unix:/var/run/php/php8.1-fpm.sock;
-     }
-
-    location ~ /\.ht {
-        deny all;
-    }
-
-}
-```
 
 > activate configuration by linking to the config file from Nginx sites-enabled directory
 
 ```
 sudo ln -s /etc/nginx/sites-available/projectLEMP /etc/nginx/sites-enabled/
 ```
+
+![activate config](<images/lemp activate config.png>)
 
 > test configuration for syntax error
 
@@ -310,10 +296,7 @@ sudo nginx -t
 
 > expected result
 
-```
-nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
-nginx: configuration file /etc/nginx/nginx.conf test is successful
-```
+![test syntax](<images/lemp test config.png>)
 
 > disable default Nginx host that is currently configured to listen on port 80
 
@@ -321,17 +304,24 @@ nginx: configuration file /etc/nginx/nginx.conf test is successful
 sudo unlink /etc/nginx/sites-enabled/default
 ```
 
+![disable default](<images/lemp disable default.png>)
+
+
 > reload Nginx to apply changes
 
 ```
 sudo systemctl reload nginx
 ```
 
+![reload nginx](<images/lemp reload nginx.png>)
+
 > create an index.html file to test your new server block works as expected.
 
 ```
 sudo echo 'Hello LEMP from hostname' $(curl -s http://169.254.169.254/latest/meta-data/public-hostname) 'with public IP' $(curl -s http://169.254.169.254/latest/meta-data/public-ipv4) > /var/www/projectLEMP/index.html
 ```
+
+![create index file](<images/lemp create index.html.png>)
 
 > go to web browser and open website url using ip address
 
