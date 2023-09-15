@@ -355,3 +355,5 @@ http://<Public-DNS-Name>:80
 ```
 http://<192.168.183.138:80
 ```
+
+![browser check](<images/lemp browser.png>)
