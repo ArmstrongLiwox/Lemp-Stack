@@ -132,3 +132,4 @@ curl -s http://35.179.92.176/latest/meta-data/public-ipv4
 
 ![check site](<images/check site.png>)
 
+
