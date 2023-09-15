@@ -149,28 +149,40 @@ curl -s http://35.179.92.176/latest/meta-data/public-ipv4
 
 ## step 2 - Installing MySQL
 
+> MySQL is a popular Database Management System used within the PHP environment.
+
+this will enable store and manage data for your site in a relational database.
+
+> Aquire and install MySQL using apt
 
 ```
 sudo apt install mysql-server
 ```
 
+> Login to MySQL console
+
 ```
 sudo mysql
 ```
+
+> Set a password for root user
 
 ```
 ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'PassWord.1';
 ```
 
+> Exit
+
+```
+exit
+```
+
+![install security and exit mysql](<images/mysql exit.png>)
+
+
+> Start interactive script
+
 ```
 sudo mysql_secure_installation
 ```
 
-```
-VALIDATE PASSWORD PLUGIN can be used to test passwords
-and improve security. It checks the strength of password
-and allows the users to set only those passwords which are
-secure enough. Would you like to setup VALIDATE PASSWORD plugin?
-
-Press y|Y for Yes, any other key for No:
-```
