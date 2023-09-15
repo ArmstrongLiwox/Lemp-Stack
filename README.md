@@ -96,6 +96,11 @@ sudo systemctl status nginx
 ```
 ![verify nginx](<images/verify nginx.png>)
 
+```
+sudo -H apt-get purge nginx-common nginx-full
+```
+
+
 
 > Open TCP port 80
     1. go to AWS and select the current EC2 instance
