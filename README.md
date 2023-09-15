@@ -239,7 +239,7 @@ Steps:
 sudo apt install php-fpm php-mysql
 ```
 
-
+![php install](<images/php install.png>)
 
 ---
 
