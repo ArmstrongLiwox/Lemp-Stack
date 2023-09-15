@@ -186,3 +186,23 @@ exit
 sudo mysql_secure_installation
 ```
 
+![validate password](<images/validate password.png>)
+
+![valdate 2](<images/validate password 2.png>)
+
+![validate 3](<images/validate password 3.png>)
+
+![validate 4](<images/validate password 4.png>)
+
+![validate 5](<images/validate password 5.png>)
+
+![validate 6](<images/validate password 6.png>)
+
+![validate 7](<images/validate password 7.png>)
+
+![validate 8](<images/validate password.png>)
+
+
+
+
+
