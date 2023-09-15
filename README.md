@@ -296,9 +296,51 @@ server {
 }
 ```
 
+> activate configuration by linking to the config file from Nginx sites-enabled directory
 
+```
+sudo ln -s /etc/nginx/sites-available/projectLEMP /etc/nginx/sites-enabled/
+```
 
+> test configuration for syntax error
 
+```
+sudo nginx -t
+```
 
+> expected result
 
+```
+nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+nginx: configuration file /etc/nginx/nginx.conf test is successful
+```
 
+> disable default Nginx host that is currently configured to listen on port 80
+
+```
+sudo unlink /etc/nginx/sites-enabled/default
+```
+
+> reload Nginx to apply changes
+
+```
+sudo systemctl reload nginx
+```
+
+> create an index.html file to test your new server block works as expected.
+
+```
+sudo echo 'Hello LEMP from hostname' $(curl -s http://169.254.169.254/latest/meta-data/public-hostname) 'with public IP' $(curl -s http://169.254.169.254/latest/meta-data/public-ipv4) > /var/www/projectLEMP/index.html
+```
+
+> go to web browser and open website url using ip address
+
+```
+http://<Public-IP-Address>:80
+```
+
+> go to web browser and open website url using DNS name
+
+```
+http://<Public-DNS-Name>:80
+```
