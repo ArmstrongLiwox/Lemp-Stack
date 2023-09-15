@@ -89,3 +89,11 @@ sudo apt install nginx
 ![install nginx](<images/install nginx.png>)
 ---
 
+> verify nginx was successfully installed
+
+```
+sudo systemctl status nginx
+```
+![verify nginx](<images/verify nginx.png>)
+
+
