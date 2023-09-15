@@ -145,3 +145,32 @@ curl -s http://35.179.92.176/latest/meta-data/public-ipv4
 
 ---
 
+## **Installing MySQL**
+
+## step 2 - Installing MySQL
+
+
+```
+sudo apt install mysql-server
+```
+
+```
+sudo mysql
+```
+
+```
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'PassWord.1';
+```
+
+```
+sudo mysql_secure_installation
+```
+
+```
+VALIDATE PASSWORD PLUGIN can be used to test passwords
+and improve security. It checks the strength of password
+and allows the users to set only those passwords which are
+secure enough. Would you like to setup VALIDATE PASSWORD plugin?
+
+Press y|Y for Yes, any other key for No:
+```
