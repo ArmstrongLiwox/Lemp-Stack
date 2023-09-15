@@ -97,3 +97,15 @@ sudo systemctl status nginx
 ![verify nginx](<images/verify nginx.png>)
 
 
+> Open TCP port 80
+    >1. go to AWS and select the current EC2 instance
+    >2. click the security tab
+    >3. select security groups
+    >4. edit inboud rules
+    >5. add rule
+    >6. choose http and 0.0.0.0/0
+    >7. save rule
+
+![save TCP](<images/add TCP.png>)
+
+
