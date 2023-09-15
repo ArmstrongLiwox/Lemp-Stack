@@ -106,6 +106,9 @@ sudo systemctl status nginx
     >6. choose http and 0.0.0.0/0
     >7. save rule
 
+
 ![save TCP](<images/add TCP.png>)
+
+---
 
 
