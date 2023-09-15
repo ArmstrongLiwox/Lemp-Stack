@@ -219,7 +219,36 @@ mysql
 
 ![exit mysql](<images/exit mysql.png>)
 
+
+---
+
+## Installing PHP
+
+## Step 3 - Installing PHP
+
+> PHP will process code and generate dynamic content for the web server.
+
+Steps:
+* install php-fpm
+* tell nginx to pass PHP request to this software for processing.
+* install php-mysql, a php module that allows PHP to communicate with MySQL-based databases.
+
+> Install the two packages at once
+
 ```
-Note: At the time of this writing, the native MySQL PHP library mysqlnd doesn’t support caching_sha2_authentication, the default authentication method for MySQL 8. For that reason, when creating database users for PHP applications on MySQL 8, you’ll need to make sure they’re configured to use mysql_native_password instead. We’ll demonstrate how to do that in Step 6.
+sudo apt install php-fpm php-mysql
 ```
+
+
+
+---
+
+## Configuring Nginx to use PHP processor
+
+## Step 4 - Configuring Nginx to use PHP processor
+
+
+
+
+
 
