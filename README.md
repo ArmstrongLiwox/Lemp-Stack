@@ -63,6 +63,29 @@ proxied 20.86% busiest sites in August 2023.
 >1. Instal and Launch Git bash
 >1. Connect to AWS instance via  Git bash
 
+```
+ssh -i <Your-private-key.pem> ubuntu@<EC2-Public-IP-address>
+```
+
 ---
 ![Launch Git bash](<images/launch git bash.png>)
+
+---
+
+## Nginx Server
+
+## 2. step 1 - Installing the Nginx Web Server
+
+>Use the apt package manager to install Nginx server
+
+```
+sudo apt update
+```
+```
+sudo apt install nginx
+
+```
+
+![install nginx](<images/install nginx.png>)
+---
 
