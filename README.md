@@ -247,6 +247,56 @@ sudo apt install php-fpm php-mysql
 
 ## Step 4 - Configuring Nginx to use PHP processor
 
+> When using the Nginx server we can create server blocks to encapsulate configuration details and host more than one domain on a single server.
+
+> create the root web directory for your domain
+
+```
+sudo mkdir /var/www/projectLEMP
+```
+
+> assign ownership of the directory with the $USER environment variable
+
+```
+sudo chown -R $USER:$USER /var/www/projectLEMP
+
+```
+
+> open a new configuration file in Nginx 'sites-availabe' directory using ***nano***
+
+```
+sudo nano /etc/nginx/sites-available/projectLEMP
+```
+
+> paste in the following bar bone-configuration
+
+```
+#/etc/nginx/sites-available/projectLEMP
+
+server {
+    listen 80;
+    server_name projectLEMP www.projectLEMP;
+    root /var/www/projectLEMP;
+
+    index index.html index.htm index.php;
+
+    location / {
+        try_files $uri $uri/ =404;
+    }
+
+    location ~ \.php$ {
+        include snippets/fastcgi-php.conf;
+        fastcgi_pass unix:/var/run/php/php8.1-fpm.sock;
+     }
+
+    location ~ /\.ht {
+        deny all;
+    }
+
+}
+```
+
+
 
 
 
