@@ -325,35 +325,24 @@ sudo echo 'Hello LEMP from hostname' $(curl -s http://169.254.169.254/latest/met
 
 > go to web browser and open website url using ip address
 
-```
-ip addr show
-```
-```
-curl ifconfig.me
-```
 
 ```
 http://<Public-IP-Address>:80
 ```
 ```
-http://127.0.0.1/8:80
+http://13.40.85.246:80
 ```
-```
-http://102.88.37.155/8:80
-```
+
 
 > go to web browser and open website url using DNS name
 
-```
-resolvectl status
-```
 
 ```
 http://<Public-DNS-Name>:80
 ```
 
 ```
-http://<192.168.183.138:80
+http://ec2-13-40-85-246.eu-west-2.compute.amazonaws.com:80
 ```
 
-![browser check](<images/lemp browser.png>)
+![check for echo message](<images 2/hello lemp.png>)
