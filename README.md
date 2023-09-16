@@ -97,6 +97,7 @@ sudo systemctl status nginx
 
 ![verify ngnix fail](<images/verify nginx fail.png>)
 
+![nginx status active](<images 2/sudo systemctl status nginx.png>)
 
 ![verify nginx](<images/verify nginx.png>)
 
@@ -141,6 +142,8 @@ curl -s http://35.179.92.176/latest/meta-data/public-ipv4
 ![check site](<images/check site.png>)
 
 ![welcome to ngnix](<images/welcome ngnix.png>)
+
+![Ec2 Nginx welcome](<images 2/welcome to ngnix 2.png>)
 
 
 ---
@@ -401,8 +404,10 @@ sudo rm /var/www/your_domain/info.php
 > connect to MySQL console using root
 
 ```
-sudo mysql
+sudo mysql -p
 ```
+![login mysql](<images 2/login mysql.png>)
+
 
 > create new database
 
