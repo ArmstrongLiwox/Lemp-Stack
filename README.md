@@ -494,6 +494,8 @@ SELECT * FROM example_database.todo_list;
 ```
 exit
 ```
+![exit](<images 2/exit mysql tables.png>)
+
 
 > create a PHP script that will connect to MySQL and quer for your content.
 
