@@ -412,24 +412,29 @@ sudo mysql -p
 > create new database
 
 ```
-mysql> CREATE DATABASE `example_database`;
+CREATE DATABASE `example_database`;
 ```
+
+![create database](<images 2/create database.png>)
 
 > create new user and password
 
 ```
-mysql>  CREATE USER 'example_user'@'%' IDENTIFIED WITH mysql_native_password BY 'PassWord.1';
+CREATE USER 'example_user'@'%' IDENTIFIED WITH mysql_native_password BY 'PassWord.1';
 ```
+![create user](<images 2/create mysql user.png>)
+
 > give user permission over DB
 
 ```
-mysql> GRANT ALL ON example_database.* TO 'example_user'@'%';
+GRANT ALL ON example_database.* TO 'example_user'@'%';
 ```
+![grant permission](<images 2/grant permission.png>)
 
 > exit Mysql shell
 
 ```
-mysql> exit
+exit
 ```
 
 > test if new user have proper permission 
@@ -437,51 +442,53 @@ mysql> exit
 > login to MySQL using custom user credentials
 
 ```
-$ mysql -u example_user -p
+mysql -u example_user -p
 ```
+![confirm credentials](<images 2/confirm credentials.png>)
+
 
 > confirm access to database
 
 ```
-mysql> SHOW DATABASES;
+SHOW DATABASES;
 ```
+![show database](<images 2/show database.png>)
 
-output should be 
-```
-Output
-+--------------------+
-| Database           |
-+--------------------+
-| example_database   |
-| information_schema |
-+--------------------+
-2 rows in set (0.000 sec)
-```
+
  > create test table named todo_list in MySQL 
 
  ```
  CREATE TABLE example_database.todo_list (item_id INT AUTO_INCREMENT,content VARCHAR(255),PRIMARY KEY(item_id));
 ```
 
+> use different values
+
+```
+INSERT INTO example_database.todo_list (content) VALUES ("My first important item");
+```
+
+```
+INSERT INTO example_database.todo_list (content) VALUES ("My second important item");
+```
+
+```
+INSERT INTO example_database.todo_list (content) VALUES ("My third important item");
+```
+
+```
+INSERT INTO example_database.todo_list (content) VALUES ("My fourth important item");
+```
+
+
 > confirm that the data was succssefully saved.
 
 ```
-mysql>  SELECT * FROM example_database.todo_list;
+SELECT * FROM example_database.todo_list;
 ```
 
-> output should be
-```
-Output
-+---------+--------------------------+
-| item_id | content                  |
-+---------+--------------------------+
-|       1 | My first important item  |
-|       2 | My second important item |
-|       3 | My third important item  |
-|       4 | and this one more thing  |
-+---------+--------------------------+
-4 rows in set (0.000 sec)
-```
+![confirm data](<images 2/confirm data.png>)
+
+
 > exit MySQL console
 
 ```
