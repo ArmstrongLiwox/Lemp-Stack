@@ -346,3 +346,41 @@ http://ec2-13-40-85-246.eu-west-2.compute.amazonaws.com:80
 ```
 
 ![check for echo message](<images 2/hello lemp.png>)
+
+
+---
+
+
+## Testing PHP with Nginx
+
+## Step 5 - Testing PHP with Nginx
+
+> My LAMP stack is now completely installed and fully  operational.
+My LEMP stack is also fully setup.
+
+> Test to validate that Nginx can correctly hand .php files to the PHP processor.
+
+> Create a test PHP file in the document root.
+
+> Open a info.php file in document root
+
+```
+nano /var/www/projectLEMP/info.php
+```
+> Paste php code in new file
+
+```
+<?php
+phpinfo();
+```
+
+> access the page in web browser
+
+```
+http://`server_domain_or_IP`/info.php
+```
+
+
+
+
+
