@@ -390,11 +390,141 @@ sudo rm /var/www/your_domain/info.php
 ```
 ![remove php file](<images 2/remove php file.png>)
 
+---
+
+## Retrieving data from Mysql database with php
+
+## Step 6 - Retrieving data from Mysql database with php
+
+> Create a test database (DB) with simple todo listand configure access to it, so the Nginx website would be able to query data form the DB and display it.
+
+> connect to MySQL console using root
+
+```
+$ sudo mysql
+```
+
+> create new database
+
+```
+mysql> CREATE DATABASE `example_database`;
+```
+
+> create new user and password
+
+```
+mysql>  CREATE USER 'example_user'@'%' IDENTIFIED WITH mysql_native_password BY 'PassWord.1';
+```
+> give user permission over DB
+
+```
+mysql> GRANT ALL ON example_database.* TO 'example_user'@'%';
+```
+
+> exit Mysql shell
+
+```
+mysql> exit
+```
+
+> test if new user have proper permission 
+
+> login to MySQL using custom user credentials
+
+```
+$ mysql -u example_user -p
+```
+
+> confirm access to database
+
+```
+mysql> SHOW DATABASES;
+```
+
+output should be 
+```
+Output
++--------------------+
+| Database           |
++--------------------+
+| example_database   |
+| information_schema |
++--------------------+
+2 rows in set (0.000 sec)
+```
+ > create test table named todo_list in MySQL 
+
+ ```
+ CREATE TABLE example_database.todo_list (item_id INT AUTO_INCREMENT,content VARCHAR(255),PRIMARY KEY(item_id));
+```
+
+> confirm that the data was succssefully saved.
+
+```
+mysql>  SELECT * FROM example_database.todo_list;
+```
+
+> output should be
+```
+Output
++---------+--------------------------+
+| item_id | content                  |
++---------+--------------------------+
+|       1 | My first important item  |
+|       2 | My second important item |
+|       3 | My third important item  |
+|       4 | and this one more thing  |
++---------+--------------------------+
+4 rows in set (0.000 sec)
+```
+> exit MySQL console
+
+```
+exit
+```
+
+> create a PHP script that will connect to MySQL and quer for your content.
+
+> create a new PHP file in your custom web root directory.
+
+```
+$ nano /var/www/projectLEMP/todo_list.php
+```
+
+> copy the content into the php script
+
+```
+<?php
+$user = "example_user";
+$password = "PassWord.1";
+$database = "example_database";
+$table = "todo_list";
+
+try {
+  $db = new PDO("mysql:host=localhost;dbname=$database", $user, $password);
+  echo "<h2>TODO</h2><ol>";
+  foreach($db->query("SELECT content FROM $table") as $row) {
+    echo "<li>" . $row['content'] . "</li>";
+  }
+  echo "</ol>";
+} catch (PDOException $e) {
+    print "Error!: " . $e->getMessage() . "<br/>";
+    die();
+}
+```
+
+> save and close the file.
+
+> access this page on your web browser
+
+```
+http://<Public_domain_or_IP>/todo_list.php
+```
+
+```
+http://13.40.85.246//todo_list.php
+```
+> The PHP environment is ready to connect with MySQL server.
 
 
-
-
-
-
-
-
+# Thank You
