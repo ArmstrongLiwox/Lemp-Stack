@@ -401,7 +401,7 @@ sudo rm /var/www/your_domain/info.php
 > connect to MySQL console using root
 
 ```
-$ sudo mysql
+sudo mysql
 ```
 
 > create new database
