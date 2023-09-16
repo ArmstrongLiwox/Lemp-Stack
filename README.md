@@ -502,30 +502,13 @@ exit
 > create a new PHP file in your custom web root directory.
 
 ```
-$ nano /var/www/projectLEMP/todo_list.php
+nano /var/www/projectLEMP/todo_list.php
 ```
 
 > copy the content into the php script
 
-```
-<?php
-$user = "example_user";
-$password = "PassWord.1";
-$database = "example_database";
-$table = "todo_list";
+![create php script](<images 2/create php script.png>)
 
-try {
-  $db = new PDO("mysql:host=localhost;dbname=$database", $user, $password);
-  echo "<h2>TODO</h2><ol>";
-  foreach($db->query("SELECT content FROM $table") as $row) {
-    echo "<li>" . $row['content'] . "</li>";
-  }
-  echo "</ol>";
-} catch (PDOException $e) {
-    print "Error!: " . $e->getMessage() . "<br/>";
-    die();
-}
-```
 
 > save and close the file.
 
@@ -538,6 +521,9 @@ http://<Public_domain_or_IP>/todo_list.php
 ```
 http://13.40.85.246//todo_list.php
 ```
+
+![confirm in web browser](<images 2/confirm on website.png>)
+
 > The PHP environment is ready to connect with MySQL server.
 
 
