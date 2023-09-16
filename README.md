@@ -383,8 +383,12 @@ http://`server_domain_or_IP`/info.php
 ```
 ![check php file in browser](<images 2/create php file 2.png>)
 
+> remove the php file
 
-
+```
+sudo rm /var/www/your_domain/info.php
+```
+![remove php file](<images 2/remove php file.png>)
 
 
 
