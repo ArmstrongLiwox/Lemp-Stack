@@ -374,11 +374,21 @@ nano /var/www/projectLEMP/info.php
 phpinfo();
 ```
 
+![create php file](<images 2/create php file.png>)
+
 > access the page in web browser
 
 ```
 http://`server_domain_or_IP`/info.php
 ```
+![check php file in browser](<images 2/create php file 2.png>)
+
+
+
+
+
+
+
 
 
 
